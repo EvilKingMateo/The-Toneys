@@ -24,11 +24,12 @@
 }
 
 a {
-    color: var(--textBlue);
+    color: var(--text);
     text-decoration: none;
 
     &:hover {
         text-decoration: underline;
+        color: var(--text);
     }
 }
 
