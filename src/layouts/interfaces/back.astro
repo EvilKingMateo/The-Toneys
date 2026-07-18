@@ -1,0 +1,11 @@
+---
+interface Props {
+	name: string;
+    link: string;
+}
+
+const {name, link} = Astro.props;
+
+---
+
+<a href={link}><span class="material-symbols-outlined">arrow_back</span>Back to {name}</a>

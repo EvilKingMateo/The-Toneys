@@ -1,0 +1,39 @@
+---
+interface Props {
+	title: string;
+}
+
+const {title} = Astro.props;
+
+import '../styles/style.css';
+---
+
+
+<!DOCTYPE html>
+<html lang="en-GB">
+	<head>
+		<title>{title} | The Toneys</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_back,calendar_today,delete,edit,keyboard_arrow_down,keyboard_arrow_up,location_on,open_in_new,videocam" />
+	</head>
+    <body>
+
+		<header id="header">
+			<a href='/'><b>The Toneys</b></a>
+		</header>
+        
+		<main>
+			<h1>{title}</h1>
+			<slot/>
+		</main>
+
+		<footer>
+			<div><b>Menu:</b><a href="/">Home</a></div>
+			<div><b>Email:</b>tony@toneys.band</div>
+			<div></div>
+		</footer>
+    </body>
+</html>
