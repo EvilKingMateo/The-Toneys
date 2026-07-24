@@ -8,11 +8,10 @@ const {title} = Astro.props;
 import '../styles/style.css';
 ---
 
-
 <!DOCTYPE html>
 <html lang="en-GB">
 	<head>
-		<title>{title} | The Toneys</title>
+		<title>The Toneys</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +22,7 @@ import '../styles/style.css';
     <body>
 
 		<header id="header">
-			<a href='/'><b>The Toneys</b></a>
+			<a href='/'><b>The <span id="band">Toneys</span></b></a>
 		</header>
         
 		<main>

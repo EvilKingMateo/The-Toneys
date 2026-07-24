@@ -1,14 +1,19 @@
 ---
 import Layout from '../layouts/page.astro';
+import Contact from '../layouts/sections/contact.astro'
+import Image from '../layouts/sections/image.astro'
+import Text from '../layouts/sections/text.astro'
 ---
 
 <Layout title="">
-	<h1>The Toneys</h1>
-	<p>Hello! We are the Toneys, a friendly jazz big band!</p>
+	<Image src="./Band Picture.jpg" alt="The Toneys" text="The Toneys" />
 
-	<h2></h2>
 
-	<h2>Meet the Band!</h2>
+	<Text title="About Us">
+		Hello! We are the Toneys, a friendly jazz big band!
+	</Text>
+
+	<Text title="Meet the Band!">
 	<h3>Vocals</h3>
 	<p>
 		Vocals<br>
@@ -42,10 +47,9 @@ import Layout from '../layouts/page.astro';
 	<p>
 		Cello<br>
 	</p>
+	</Text>
 
-
-	<h2>Contact Us</h2>
-	<p>
-		Contact Us: <a href="mailto: tony@toneys.band">tony@toneys.band</a>
-	</p>
+	<Contact>
+		<h2>Contact Us</h2>
+	</Contact>
 </Layout>

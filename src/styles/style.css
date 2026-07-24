@@ -2,9 +2,10 @@
 
 :root {
     --background: #120623;
-    --primary: ;
+    --primary: #EB3324;
     --secondary: #0c121e;
     --accent: #e7a615;
+    --o7: #df7026;
     --header: #343170;
     --footer: #356e5d;
     --text: #e3edfa;
@@ -12,11 +13,13 @@
     --contentWidth: 100vw;
     --contentPadding: 0vw;
 
-    --fontStyle: "limelight";
+    --toneysFont: "limelight";
+    --phoneysFont: "pixelify sans";
+    --fontStyle: var(--toneysFont);
     --fontWeight: 400;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 900px) {
     body {
         --contentWidth: 60vw;
         --contentPadding: 20vw;
@@ -81,7 +84,7 @@ footer {
     gap: 7px;
 
     > div {
-        margin: 0px;
+        margin: 5px;
         display: flex;
         flex-direction: column;
     }
