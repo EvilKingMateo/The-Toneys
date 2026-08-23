@@ -2,8 +2,6 @@
 
 :root {
     --background: #120623;
-    --primary: #EB3324;
-    --secondary: #0c121e;
     --accent: #e7a615;
     --o7: #df7026;
     --header: #343170;
@@ -23,16 +21,6 @@
     body {
         --contentWidth: 60vw;
         --contentPadding: 20vw;
-    }
-}
-
-a {
-    color: var(--text);
-    text-decoration: none;
-
-    &:hover {
-        text-decoration: underline;
-        color: var(--text);
     }
 }
 
@@ -64,12 +52,40 @@ header {
     background-color: var(--header);
     height: 50px;
     padding: 3px;
-    font-size: 40px;
+    position: relative;
     align-items: center;
-    justify-content: center;
 
     > * {
-        padding: 0 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        > * {
+            padding: 0 10px;
+        }
+    }
+
+    > #right {
+        font-size: 20px;
+
+        padding-right: var(--contentPadding);
+        margin-left: auto;
+    }
+
+    > #left {
+        font-size: 20px;
+
+        padding-left: var(--contentPadding);
+    }
+
+    > #centre {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        font-size: 40px;
     }
 }
 
@@ -90,11 +106,28 @@ footer {
     }
 }
 
-
-h1, h2, h3, b {
+header, h1, h2, h3, b {
 	color: var(--accent);
 	text-transform: uppercase;
     font-family: var(--fontStyle), sans-serif;
     font-weight: var(--fontWeight);
 
+    & a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    & a:hover {
+        text-decoration: underline;
+        color: inherit;
+    }
+}
+
+a {
+    color: var(--text);
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }

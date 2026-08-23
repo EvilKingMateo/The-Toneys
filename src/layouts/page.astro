@@ -1,4 +1,5 @@
 ---
+import Boiler from './defaults/boilerplate.astro';
 interface Props {
 	title: string;
 }
@@ -8,34 +9,32 @@ const {title} = Astro.props;
 import '../styles/style.css';
 ---
 
-<!DOCTYPE html>
-<html lang="en-GB">
-	<head>
-		<title>The Toneys</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_back,calendar_today,delete,edit,keyboard_arrow_down,keyboard_arrow_up,location_on,open_in_new,videocam" />
-		<meta charset="utf-8" />
-	</head>
-    <body>
+<Boiler>
+	<header id="header">
+		<div id="left">
+			<a href='/'>home</a>
+			<a>meet the band</a>
+		</div>
 
-		<header id="header">
-			<a href='/'><b>The <span id="band">Toneys</span></b></a>
-		</header>
+		<div id="centre"><a href='/'><b>The <span id="band">Toneys</span></b></a></div>
+
+		<div id="right">
+			<a href="/contact">contact</a>
+			<a href="/o7">Sister Bands <i class="fa fa-caret-down"></i></a>
+		</div>
+	</header>
         
-		<main>
-			<h1>{title}</h1>
-			<slot/>
-		</main>
+	<main>
+		<h1>{title}</h1>
+		<slot/>
+	</main>
 
-		<footer>
-			<div><b>Menu:</b><a href="/">Home</a></div>
-			<div>
-				<b>Email:</b><a href="mailto: tony@toneys.band">tony@toneys.band</a><br>
-				<b>Social Media:</b><a href="https://www.instagram.com/thetoneys.band/">Instagram</a></div>
-			<div><b></b></div>
-		</footer>
-    </body>
-</html>
+	<footer>
+		<div><b>Menu:</b><a href="/">Home</a></div>
+		<div>
+			<b>Email:</b><a href="mailto: tony@toneys.band">tony@toneys.band</a><br>
+			<b>Social Media:</b><a href="https://www.instagram.com/toneys.jazz/">Instagram</a></div>
+		<div><b></b></div>
+	</footer>
+
+</Boiler>
