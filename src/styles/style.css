@@ -11,8 +11,8 @@
     --contentWidth: 100vw;
     --contentPadding: 0vw;
 
-    --toneysFont: "limelight";
-    --phoneysFont: "pixelify sans";
+    --toneysFont: "Limelight";
+    --phoneysFont: "Pixelify Sans";
     --fontStyle: var(--toneysFont);
     --fontWeight: 400;
 }
