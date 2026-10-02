@@ -6,8 +6,8 @@
     --footer: #356e5d;
     --text: #fffbef;
 
-    --contentWidth: 100vw;
-    --contentPadding: 0vw;
+    --contentWidth: 60vw;
+    --contentPadding: 20vw;
 
     --toneysFont: "Limelight";
     --phoneysFont: "Pixelify Sans";
@@ -15,10 +15,10 @@
     --fontWeight: 400;
 }
 
-@media (min-width: 900px) {
+@media (max-width: 1200px) {
     body {
-        --contentWidth: 60vw;
-        --contentPadding: 20vw;
+        --contentWidth: 100vw;
+        --contentPadding: 0vw;
     }
 }
 

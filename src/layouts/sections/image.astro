@@ -2,10 +2,9 @@
 interface Props {
 	src: string;
     alt: string;
-    text: string;
 }
 
-const {src, alt, text} = Astro.props;
+const {src, alt} = Astro.props;
 
 ---
 
@@ -20,20 +19,36 @@ const {src, alt, text} = Astro.props;
         display: block;
     }
 
-    #text {
+    @keyframes my-animation {
+        from {width: 90%}
+        to {width: 100%}
+    }
+
+    #slot {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 50px;
-        text-shadow: 3px 3px 6px black;
+        text-shadow: 3px 3px 6px var(--background);
+        display: flex;
+        flex-direction: row;
+        width: 85%;
+        margin: auto;
+
+        > * {
+            margin: auto;
+            filter: drop-shadow(5px 5px 5px var(--background));
+
+            animation-name: my-animation;
+            animation-duration: 2s;
+        }
     }
 </style>
 
 
 <div id="container">
     <img src={src} alt={alt} />
-    <div id="text">
-        <h1>{text}</h1>
+    <div id="slot">
+        <slot />
     </div>
 </div>

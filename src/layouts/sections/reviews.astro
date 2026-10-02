@@ -1,0 +1,84 @@
+---
+
+---
+
+<style>
+    #reviews {
+        background-color: var(--header);
+
+        > div {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+
+    p {
+        margin: 0;
+        text-align: center;
+    }
+
+    #quote {
+        display: flex;
+
+        > b {
+            font-size: 40px;
+        }
+    }
+
+    #reviewer {
+        text-align: right;
+    }
+
+    #review {
+        font-size: 25px;
+    }
+
+    #text {
+        padding: 10px;
+        text-align: center;
+    }
+
+    #start, #end {
+        font-size: 80px;
+        display: flex;
+        line-height: 0.5;
+    }
+
+    #end b {
+        margin-top: auto;
+    }
+
+    #start {
+        margin-left: auto;
+        transform: translateY(50%);
+    }
+
+    #end {
+        margin-right: auto;
+        bottom: 0px;
+        transform: translateY(-50%);
+    }
+
+</style>
+
+<section id="reviews">
+    <slot />
+
+    <div id="quote">
+        <span id="start">
+            <b>“</b>
+        </span>
+
+        <span id="text">
+            <p id="review">
+                The Toneys are fantastic, Stick that on your first album cover
+            <p id="reviewer">- Miles</p>
+        </span>
+
+        <span id="end">
+            <b>„</b>
+        </span>
+    </div>
+    </div>
+
+</section>
