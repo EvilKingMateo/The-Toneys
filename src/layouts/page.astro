@@ -10,17 +10,25 @@ import '../styles/style.css';
 ---
 
 <Boiler>
+	<!--got rid of most the left and right bc theyre kinda redundant - they dont lead to a new page -->
 	<header id="header">
-		<div id="left">
+		<!-- <div id="left">
 			<a href='/'>home</a>
 			<a>meet the band</a>
-		</div>
+		</div> -->
 
-		<div id="centre"><a href='/'><b>The <span id="band">Toneys</span></b></a></div>
+		<div id="centre"><a href='/'><b><span id="band">The Toneys</span></b></a></div>
 
 		<div id="right">
-			<a href="/contact">contact</a>
-			<a href="/o7">Sister Bands <i class="fa fa-caret-down"></i></a>
+			<!-- <a href="/contact">contact</a> -->
+			<!-- <a href="/o7">Sister Bands <i class="fa fa-caret-down"></i></a> -->
+			<div class="dropdown-menu">
+				<button class="dropdown-button">Sister Bands <i class="fa fa-caret-down"></i></button>
+				<div class="dropdown-content">
+					<hr>
+					<a href="/o7">The Phoneys</a>
+				</div>
+			</div>
 		</div>
 	</header>
         
@@ -30,11 +38,22 @@ import '../styles/style.css';
 	</main>
 
 	<footer>
-		<div><b>Menu:</b><a href="/">Home</a></div>
-		<div>
-			<b>Email:</b><a href="mailto: tony@toneys.band">tony@toneys.band</a><br>
-			<b>Social Media:</b><a href="https://www.instagram.com/toneys.jazz/">Instagram</a></div>
-		<div><b></b></div>
+		<!--put the footer content into a container div for easier styling -->
+		<section id="end-links">
+			<div id="quick-links">
+				<b>Menu:</b>
+				<a href="/">The Toneys</a>
+				<br>
+				<a href="/o7">The Phoneys</a>
+			</div>
+			<div id="email">
+				<b>We've got mail?:</b><a href="mailto: tony@toneys.band">tony@toneys.band</a><br>
+			</div>
+			<div id="socials">
+				<b>Social Media:</b><a href="https://www.instagram.com/toneys.jazz/">Instagram</a></div>
+			</div>
+			<!-- <div><b></b></div> -->
+		</section>
 	</footer>
 
 </Boiler>

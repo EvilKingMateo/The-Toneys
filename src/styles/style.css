@@ -7,19 +7,16 @@
     --text: #fffbef;
 
     --contentWidth: 60vw;
-    --contentPadding: 20vw;
+    /**lowered the padding amt - this pushes the header left and right elements apart more so theres more space for band name,
+    meant that I had to recenter the body and manually set padding amt for footer*/
+    --contentPadding: 10vw;
 
     --toneysFont: "Limelight";
     --phoneysFont: "Pixelify Sans";
     --fontStyle: var(--toneysFont);
     --fontWeight: 400;
-}
 
-@media (max-width: 1200px) {
-    body {
-        --contentWidth: 100vw;
-        --contentPadding: 0vw;
-    }
+    --centreLeft: 50%;
 }
 
 
@@ -31,6 +28,11 @@ body {
     height: 100%;
     overflow-x: hidden;
     margin: 0px;
+
+    /*centering content*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 main {
@@ -48,7 +50,7 @@ header {
     display: flex;
     flex-direction: row;
     background-color: var(--header);
-    height: 50px;
+    height: 70px;
     padding: 3px;
     position: relative;
     align-items: center;
@@ -80,7 +82,7 @@ header {
     > #centre {
         position: absolute;
         top: 50%;
-        left: 50%;
+        left: var(--centreLeft);
         transform: translate(-50%, -50%);
 
         font-size: 40px;
@@ -90,18 +92,49 @@ header {
 footer {
     background-color: var(--footer);
     margin: 0px;
-    padding: 5px var(--contentPadding);
-    height: 30vh;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 7px;
+    /*lowered height so theres less empty space*/
+    height: 13vh;
+    width: 100%;
 
-    > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > #end-links {
+        padding-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 7px;
+
+        > div {
+            margin: 5px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            text-align: center;
+        }
+
+        >#quick-links {
+            grid-column: 1;
+            grid-row: 1;
+        }
+        >#email {
+            grid-column: 2;
+            grid-row: 1;
+        }
+        >#socials {
+            grid-column: 3;
+            grid-row: 1;
+        }
+    }
+
+    /* > div {
         margin: 5px;
         display: flex;
         flex-direction: column;
-    }
+    } */
 }
 
 header, h1, h2, h3, b {
@@ -127,5 +160,191 @@ a {
 
     &:hover {
         text-decoration: underline;
+    }
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*This is all for the meet the band section: put into a grid so that its laid out nicer and can be stacked when screens are narrower*/
+#about {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+#cell1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+#cell2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+#cell3 {
+    grid-column: 3;
+    grid-row: 1;
+}
+#cell4 {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.grid-cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+}
+.grid-cell > p {
+    text-align: center;
+}
+
+.dropdown-button {
+    background-color: transparent;
+    border: none;
+    color: var(--accent);
+    font-family: var(--fontStyle);
+    font-size: 20px;
+}
+.dropdown-menu {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+
+    background-color: var(--header);
+    padding: 10px;
+}
+.dropdown-button a {
+    display: block;
+}
+
+/*make content visible when mouse hovered over it*/
+.dropdown-menu:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content a:hover {
+    color: var(--o7);
+}
+.dropdown-button:hover {
+    /* color: var(--o7); */ 
+    /* text-decoration: underline; */
+    cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    body {
+        --contentWidth: 80vw;
+        --contentPadding: 0vw;
+
+        /*move the band name to the left at smaller sizes to make more room*/
+        --centreLeft: 25%;
+    }
+
+    /*Go from row of 4 to 2 rows of 2 when narrower*/
+    #about {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 0.5fr;
+    }
+    #cell1 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    #cell2 {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    #cell3 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    #cell4 {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    p {
+        text-align: center;
+    }
+}
+
+/*Stack on top of each other when screen very narrow*/
+@media (max-width: 500px) {
+    #about {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1fr 0.5fr 0.5fr;
+    }
+    #cell1 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    #cell2 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    #cell3 {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    #cell4 {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    footer {
+        height: 27vh;
+
+        >#end-links {
+            /* padding-top: 30px; */
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 0.5fr 0.5fr;
+
+            >#quick-links {
+                grid-column: 1;
+                grid-row: 1;
+            }
+            >#email {
+                grid-column: 1;
+                grid-row: 2;
+            }
+            >#socials {
+                grid-column: 1;
+                grid-row: 3;
+            }
+        }
+    }
+
+    header {
+        flex-direction: column;
+        height: 80px;
+
+        > #centre {
+            position: relative;
+            top: 0; 
+            left: 0; 
+            transform: translate(0%, 0%);
+
+            font-size: 40px;
+        }
+
+        >#right {
+            font-size: 20px;
+            padding-right: 0;
+            margin-left: 0;
+        }
+    }
+}
+
+@media (max-width: 300px) {
+    header {
+        >#centre {
+            font-size: 15vw;
+        }
     }
 }
