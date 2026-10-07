@@ -341,10 +341,11 @@ section {
     }
 }
 
+/*put title and dropdown in centre when screen very narrow*/
 @media (max-width: 300px) {
     header {
         >#centre {
-            font-size: 15vw;
+            font-size: 13vw;
         }
     }
 }
