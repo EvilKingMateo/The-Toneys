@@ -276,6 +276,11 @@ section {
 
 /*Stack on top of each other when screen very narrow*/
 @media (max-width: 500px) {
+    body {
+        --contentWidth: 100vw;
+        --contentPadding: 0vw;
+    }
+
     #about {
         grid-template-columns: 1fr;
         grid-template-rows: 0.5fr 1fr 0.5fr 0.5fr;
