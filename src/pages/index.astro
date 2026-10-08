@@ -7,7 +7,8 @@ import Text from '../layouts/sections/text.astro'
 ---
 
 <Layout title="">
-	<Image src="./Band Picture.jpg" alt="From a front stage wing: The Toneys playing live."><Image src="./toneys/Logo+text.png" alt="The Toneys logo and wordmark."></Image></Image>
+	<!-- <Image src="./Band Picture.jpg" alt="From a front stage wing: The Toneys playing live."><Image src="./toneys/Logo+text.png" alt="The Toneys logo and wordmark."></Image></Image> -->
+	<Image src="./Band Picture w Logo.png" alt="From a front stage wing: The Toneys playing live. The Toneys logo and wordmark is overlayed on top."></Image>
 
 	<!-- Reviews>
 		
@@ -19,44 +20,54 @@ import Text from '../layouts/sections/text.astro'
 	</Text>
 
 	<Text title="Meet the Band!">
-	We perform with a variety of line-ups, ranging from small ensemble, to big band with strings!
-	<h3>Vocals</h3>
-	<p>
-		Vocals<br>
-		Backing Vocals I<br>
-		Backing Vocals II
-	</p>
+		We perform with a variety of line-ups, ranging from small ensemble, to big band with strings!
+		<section id="about">
+			<div class="grid-cell" id="cell1">
+				<h3>Vocals</h3>
+				<p>
+					Vocals<br>
+					Backing Vocals I<br>
+					Backing Vocals II
+				</p>
+			</div>
+			<div class="grid-cell" id="cell2">
+				<h3>Horns</h3>
+				<p>
+					Flute<br>
+					Alto Saxophone I<br>
+					Alto Saxophone II<br>
+					Tenor Saxophone<br>
+					B♭/Bass Clarinet<br>
+				</p>
+				<p>
+					Trumpet I<br>
+					Trumpet II<br>
+					Trumpet III<br>
+				</p>	
+			</div>
 
-	<h3>Horns</h3>
-	<p>
-		Flute<br>
-		Alto Saxophone I<br>
-		Alto Saxophone II<br>
-		Tenor Saxophone<br>
-		B♭/Bass Clarinet<br>
-	</p>
-	<p>
-		Trumpet I<br>
-		Trumpet II<br>
-		Trumpet III<br>
-	</p>
-	<h3>Rhythm</h3>
-	<p>
-		Piano<br>
-		Guitar<br>
-		Double Bass and Vocals<br>
-		Drums<br>
-		Auxillary Percussion<br>
-	</p>
-
-	<h3>Strings</h3>
-	<p>
-		Viola<br>
-		Cello<br>
-	</p>
+			<div class="grid-cell" id="cell3">
+				<h3>Rhythm</h3>
+				<p>
+					Piano<br>
+					Guitar<br>
+					Double Bass and Vocals<br>
+					Drums<br>
+					Auxillary Percussion<br>
+				</p>
+			</div>
+			<div class="grid-cell" id="cell4">
+				<h3>Strings</h3>
+				<p>
+					Viola<br>
+					Cello<br>
+				</p>	
+			</div>
+		</section>
 	</Text>
 
-	<Contact>
+	<!--this bit is also redundant - could add back later as a separate section/page if footer fills up more -->
+	<!-- <Contact>
 		<h2>Contact Us</h2>
-	</Contact>
+	</Contact> -->
 </Layout>
