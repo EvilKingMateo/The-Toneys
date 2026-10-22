@@ -1,73 +1,80 @@
 ---
 import Layout from '../layouts/page.astro';
 import Contact from '../layouts/sections/contact.astro'
-/* import Reviews from '../layouts/sections/reviews.astro' */
+import Reviews from '../layouts/sections/reviews.astro'
 import Image from '../layouts/sections/image.astro'
 import Text from '../layouts/sections/text.astro'
 ---
 
+<style>
+
+	#nav {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		gap: 20px;
+	}
+
+	#one {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	#two {
+		grid-column: 2;
+		grid-row: 1;
+	}
+
+	#three {
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	@media (max-width: 1000px) {
+		#nav {
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr 1fr 1fr;
+			gap: 20px;
+		}
+		#one {
+			grid-column: 1;
+			grid-row: 1;
+		}
+
+		#two {
+			grid-column: 1;
+			grid-row: 2;
+		}
+
+		#three {
+			grid-column: 1;
+			grid-row: 3;
+		}
+	}
+</style>
+
 <Layout title="">
-	<!-- <Image src="./Band Picture.jpg" alt="From a front stage wing: The Toneys playing live."><Image src="./toneys/Logo+text.png" alt="The Toneys logo and wordmark."></Image></Image> -->
-	<Image src="./Band Picture w Logo.png" alt="From a front stage wing: The Toneys playing live. The Toneys logo and wordmark is overlayed on top."></Image>
+	<Image Src="./Band Picture.jpg" Alt="From a front stage wing: The Toneys playing live."><Image Src="./toneys/Logo+text.png" Alt="The Toneys logo and wordmark." Ratio="none" Class="seasonal"></Image></Image>
 
-	<!-- Reviews>
+	<!--Reviews>
 		
-	</Reviews -->
+	</Reviews-->
 
-	<Text title="About Us">
-		Hello! We are The Toneys, a friendly jazz big band! 
-		We call each other Tony, leading to some admittedly very confusing conversations in rehearsals…
-	</Text>
+	<br>
 
-	<Text title="Meet the Band!">
-		We perform with a variety of line-ups, ranging from small ensemble, to big band with strings!
-		<section id="about">
-			<div class="grid-cell" id="cell1">
-				<h3>Vocals</h3>
-				<p>
-					Vocals<br>
-					Backing Vocals I<br>
-					Backing Vocals II
-				</p>
-			</div>
-			<div class="grid-cell" id="cell2">
-				<h3>Horns</h3>
-				<p>
-					Flute<br>
-					Alto Saxophone I<br>
-					Alto Saxophone II<br>
-					Tenor Saxophone<br>
-					B♭/Bass Clarinet<br>
-				</p>
-				<p>
-					Trumpet I<br>
-					Trumpet II<br>
-					Trumpet III<br>
-				</p>	
-			</div>
+	<section id="nav">
+		<Image Id="one" Src="./Battle of the Bands.jpeg" Alt="The Toneys playing live at their local Battle of the Bands 26" Href="/about">
+			<h1>Meet The Band!</h1>
+		</Image>
 
-			<div class="grid-cell" id="cell3">
-				<h3>Rhythm</h3>
-				<p>
-					Piano<br>
-					Guitar<br>
-					Double Bass and Vocals<br>
-					Drums<br>
-					Auxillary Percussion<br>
-				</p>
-			</div>
-			<div class="grid-cell" id="cell4">
-				<h3>Strings</h3>
-				<p>
-					Viola<br>
-					Cello<br>
-				</p>	
-			</div>
-		</section>
-	</Text>
+		<Image Id="two" Src="./ah.jpeg" Alt="Standing by a field: nine of The Toneys in a line" Href="/o7">
+			<h1 style="font-family: var(--phoneysFont);">Sister Bands</h1>
+		</Image>
 
-	<!--this bit is also redundant - could add back later as a separate section/page if footer fills up more -->
-	<!-- <Contact>
-		<h2>Contact Us</h2>
-	</Contact> -->
+		<Image Id="three" Src="Quiz Night.jpeg" Alt="The Toneys playing live at a quiz night" Href="/contact">
+			<h1>Contact Us</h1>
+		</Image>
+	</section>
+
+	<br>
 </Layout>

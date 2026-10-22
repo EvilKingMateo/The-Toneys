@@ -6,10 +6,18 @@
     --footer: #356e5d;
     --text: #fffbef;
 
+    --red: #DB0D09;
+    --orange: #df7026;
+    --yellow: #e7a615;
+    --green: #356e5d;
+    --blue: #194571;
+    --purple: #343170;
+
     --contentWidth: 60vw;
-    /**lowered the padding amt - this pushes the header left and right elements apart more so theres more space for band name,
-    meant that I had to recenter the body and manually set padding amt for footer*/
-    --contentPadding: 10vw;
+    --contentPadding: 20vw;
+
+    --headerWidth: 80vw;
+    --headerPadding: 10vw;
 
     --toneysFont: "Limelight";
     --phoneysFont: "Pixelify Sans";
@@ -17,6 +25,10 @@
     --fontWeight: 400;
 
     --centreLeft: 50%;
+
+    --largeScreen: 1000px;
+    --mediumScreen: 500px;
+    --smallScreen: 300px;
 }
 
 
@@ -29,7 +41,7 @@ body {
     overflow-x: hidden;
     margin: 0px;
 
-    /*centering content*/
+    /*centring content*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,6 +50,10 @@ body {
 main {
     width: var(--contentWidth);
     padding: 0 var(--contentPadding);
+}
+
+h1 {
+    font-size: 3em;
 }
 
 img {
@@ -69,14 +85,14 @@ header {
     > #right {
         font-size: 20px;
 
-        padding-right: var(--contentPadding);
+        padding-right: var(--headerPadding);
         margin-left: auto;
     }
 
     > #left {
         font-size: 20px;
 
-        padding-left: var(--contentPadding);
+        padding-left: var(--headerPadding);
     }
 
     > #centre {
@@ -129,12 +145,6 @@ footer {
             grid-row: 1;
         }
     }
-
-    /* > div {
-        margin: 5px;
-        display: flex;
-        flex-direction: column;
-    } */
 }
 
 header, h1, h2, h3, b {
@@ -233,8 +243,6 @@ section {
     color: var(--o7);
 }
 .dropdown-button:hover {
-    /* color: var(--o7); */ 
-    /* text-decoration: underline; */
     cursor: pointer;
 }
 
@@ -242,9 +250,6 @@ section {
     body {
         --contentWidth: 80vw;
         --contentPadding: 0vw;
-
-        /*move the band name to the left at smaller sizes to make more room*/
-        --centreLeft: 25%;
     }
 
     /*Go from row of 4 to 2 rows of 2 when narrower*/

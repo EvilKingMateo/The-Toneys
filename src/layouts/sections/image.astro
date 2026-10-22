@@ -1,29 +1,44 @@
 ---
 interface Props {
-	src: string;
-    alt: string;
+    Src: string;
+    Alt: string;
+    Id?: string;
+    Class?: string;
+    Onclick?: string;
+    Href?: string;
+    Ratio?: string;
 }
 
-const {src, alt} = Astro.props;
+const {
+    Src, 
+    Alt, 
+    Id, 
+    Class, 
+    Onclick, 
+    Href, 
+    Ratio = "3/2"
+} = Astro.props;
 
 ---
 
-<style>
-    #container {
+<style define:vars={{Ratio}}>
+    section {
         /*position relative causes the image to be displayed on top of everything else - not sure why so I just
         edited the image and logo into one so theres no need for image stacking here*/
-        /* position: relative; */
+
+        /*I did it so that elements can be added over the top, allowing for quick changes (such as changing the logo for christmas), without having to use an image editor*/
+        
+        position: relative; 
         text-align: center;
+        width: 100%;
+        aspect-ratio: var(--Ratio);
     }
 
     img {
         width: 100%;
+        height: 100%;
         display: block;
-    }
-
-    @keyframes my-animation {
-        from {width: 90%}
-        to {width: 100%}
+        object-fit: cover;
     }
 
     #slot {
@@ -36,21 +51,21 @@ const {src, alt} = Astro.props;
         flex-direction: row;
         width: 85%;
         margin: auto;
+        pointer-events: none;
+        
 
         > * {
             margin: auto;
             filter: drop-shadow(5px 5px 5px var(--background));
-
-            animation-name: my-animation;
-            animation-duration: 2s;
         }
     }
 </style>
 
 
-<div id="container">
-    <img src={src} alt={alt} />
+<section>
+    <img id={Id} class={Class} src={Src} alt={Alt} onclick={Onclick + ';' + (Href ? `location.href = '${Href}'` : "")}>
+
     <div id="slot">
         <slot />
     </div>
-</div>
+</section>
