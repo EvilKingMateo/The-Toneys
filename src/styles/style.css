@@ -1,3 +1,5 @@
+/*branding stuff*/
+
 :root {
     --background: #120623;
     --accent: #e7a615;
@@ -41,7 +43,6 @@ body {
     overflow-x: hidden;
     margin: 0px;
 
-    /*centring content*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,11 +55,6 @@ main {
 
 h1 {
     font-size: 3em;
-}
-
-img {
-    margin: auto;
-    width: var(--contentPadding)
 }
 
 header {
@@ -87,12 +83,14 @@ header {
 
         padding-right: var(--headerPadding);
         margin-left: auto;
+        z-index: 1;
     }
 
     > #left {
         font-size: 20px;
 
         padding-left: var(--headerPadding);
+        z-index: 1;
     }
 
     > #centre {
@@ -102,6 +100,8 @@ header {
         transform: translate(-50%, -50%);
 
         font-size: 40px;
+        width: 100%;
+        justify-content: center;
     }
 }
 
@@ -213,37 +213,12 @@ section {
     text-align: center;
 }
 
-.dropdown-button {
-    background-color: transparent;
-    border: none;
-    color: var(--accent);
-    font-family: var(--fontStyle);
-    font-size: 20px;
-}
-.dropdown-menu {
-    position: relative;
-    display: inline-block;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
+/*
+    dynamic design stuff
+*/
 
-    background-color: var(--header);
-    padding: 10px;
-}
-.dropdown-button a {
-    display: block;
-}
-
-/*make content visible when mouse hovered over it*/
-.dropdown-menu:hover .dropdown-content {
-    display: block;
-}
-.dropdown-content a:hover {
-    color: var(--o7);
-}
-.dropdown-button:hover {
-    cursor: pointer;
+.mobile {
+    display: none !important;
 }
 
 @media (max-width: 1000px) {
@@ -284,6 +259,8 @@ section {
     body {
         --contentWidth: 100vw;
         --contentPadding: 0vw;
+        --headerWidth: 100vw;
+        --headerPadding: 0vw;
     }
 
     #about {
@@ -330,24 +307,12 @@ section {
         }
     }
 
-    header {
-        flex-direction: column;
-        height: 80px;
+    .desktop {
+        display: none !important;
+    }
 
-        > #centre {
-            position: relative;
-            top: 0; 
-            left: 0; 
-            transform: translate(0%, 0%);
-
-            font-size: 40px;
-        }
-
-        >#right {
-            font-size: 20px;
-            padding-right: 0;
-            margin-left: 0;
-        }
+    .mobile {
+        display: block !important;
     }
 }
 

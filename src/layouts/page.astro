@@ -1,5 +1,7 @@
 ---
 import Boiler from './defaults/boilerplate.astro';
+import Dropdown from './sections/dropdown.astro';
+
 interface Props {
 	title: string;
 }
@@ -10,49 +12,54 @@ import '../styles/style.css';
 ---
 
 <Boiler>
-	<!--got rid of most the left and right bc theyre kinda redundant - they dont lead to a new page -->
-	<header id="header">
-		<div id="left">
-			<a href='/'>home</a>
-			<a href='/about'>meet the band</a>
-		</div>
 
-		<div id="centre"><a href='/'><b><span id="band">The Toneys</span></b></a></div>
+<header id="header">
+	<div id="left">
+		<a href='/' class="desktop">home</a>
+		<a href='/about' class="desktop">meet the band</a>
+	</div>
 
-		<div id="right">
-			<a href="/contact">contact</a>
-			<div class="dropdown-menu">
-				<button class="dropdown-button"><b>Sister Bands </b><i class="fa fa-caret-down"></i></button>
-				<div class="dropdown-content">
-					<hr>
-					<a href="/o7">The Phoneys</a>
-				</div>
-			</div>
-		</div>
-	</header>
+	<div id="centre"><a href='/'><b><span id="band">The Toneys</span></b></a></div>
+
+	<div id="right">
+		<Dropdown Name="Sister Bands" Class="desktop">
+			<a href="/o7" style="font-family: var(--phoneysFont); text-transform: none;">o7 JAZZ ENSEMBLE</a>
+		</Dropdown>
+
+		<a href="/contact" class="desktop">contact us</a>
+
+		<Dropdown Name="Menu" Class="mobile">
+			<span slot="name" class="material-symbols-outlined">menu</span>
+			<a>Home</a><br>
+			<a>Meet the Band</a><br>
+			<a>Sister Bands</a><br>
+			<a>Contact Us</a>
+		</Dropdown>
+	</div>
+</header>
         
-	<main>
-		<h1>{title}</h1>
-		<slot/>
-	</main>
+<main>
+	<h1>{title}</h1>
+	<slot/>
+</main>
 
-	<footer>
-		<!--put the footer content into a container div for easier styling -->
-		<section id="end-links">
-			<div id="quick-links">
-				<b>Menu:</b>
-				<a href="/">The Toneys</a>
-				<br>
-				<a href="/o7">The Phoneys</a>
-			</div>
-			<div id="email">
-				<b>We've got mail?:</b><a href="mailto: tony@toneys.band">tony@toneys.band</a><br>
-			</div>
-			<div id="socials">
-				<b>Social Media:</b><a href="https://www.instagram.com/toneys.jazz/">Instagram</a></div>
-			</div>
-			<!-- <div><b></b></div> -->
-		</section>
-	</footer>
+<footer>
+	<!--put the footer content into a container div for easier styling -->
+	<section id="end-links">
+		<div id="quick-links">
+			<b>Menu:</b>
+			<a href="/">The Toneys</a>
+			<br>
+			<a href="/o7">The Phoneys</a>
+		</div>
+		<div id="email">
+			<b>We've got mail?:</b><a href="mailto: tony@toneys.band">tony@toneys.band</a><br>
+		</div>
+		<div id="socials">
+			<b>Social Media:</b><a href="https://www.instagram.com/toneys.jazz/">Instagram</a></div>
+		</div>
+		<!-- <div><b></b></div> -->
+	</section>
+</footer>
 
 </Boiler>

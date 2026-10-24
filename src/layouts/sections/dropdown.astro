@@ -1,0 +1,73 @@
+---
+interface Props {
+    Name?: string;
+    Class?: string;
+}
+
+const {Name, Class} = Astro.props
+---
+
+<style>
+    button {
+        display: flex;
+    }
+
+    .dropdown-button {
+        background-color: transparent;
+        border: none;
+        color: var(--accent);
+        font-family: var(--fontStyle);
+        font-size: 20px;
+    }
+
+    .dropdown-menu {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+
+        background-color: var(--header);
+        padding: 10px;
+        z-index: 1;
+    }
+
+    .dropdown-button a {
+        display: block;
+    }
+
+    /*make content visible when mouse hovered over it*/
+    .dropdown-menu:hover .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown-content a:hover {
+        color: var(--o7);
+    }
+
+    .dropdown-button:hover {
+        cursor: pointer;
+    }
+
+</style>
+
+<section class={Class + " dropdown-menu"}>
+	
+<button class="dropdown-button">
+    <!--
+        slot is offered for more control over formatting, however, 
+        if it is not used it defaults to just show the entered name
+    -->
+    <slot name="name">
+        <b>{Name}</b> 
+        <i class="material-symbols-outlined">arrow_drop_down</i>
+    </slot> 
+</button>
+
+<div class="dropdown-content">
+    <slot />
+</div>
+
+</section>
